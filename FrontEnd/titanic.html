@@ -222,14 +222,22 @@ body {
 
 <br>
         
-        <form action="/action_page.php" id="usrform">
-          Name: <input type="text" name="usrname">
-          <input type="submit">
-        </form>
-        <br>
-        <textarea rows="5" cols="50" name="comment" form="usrform"></textarea>
+<div id="app"> <!-- I added -->
+  <form  id="usrform">
+    Email: <input type="text" name="usrname">
 
-      </div>
+    <form>
+    <br>
+    <br>
+  <textarea v-model="caption"  rows="5" cols="50" name="comment" form="usrform"></textarea>
+    <br>
+  <p>Rating: <textarea v-model="ratings"  rows="1" cols="2" name="comment" form="usrform"></textarea> /5</p>
+    <br>
+    <button @click.prevent="submitReview()">Submit</button>
+    <p>{{status}}</p>
+    </form>
+    
+</div>
 
     <!-- End Right Column -->
     </div>
@@ -244,6 +252,10 @@ body {
   <p>Return to the main page</p>
   <p><a href="index.html" target="_blank">Return</a></p>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="assets/js/my.js"></script>
 
 </body>
 </html>
