@@ -32,8 +32,8 @@ $app->post('/api/review', function ($request, $response, $args) { //POST example
 	$params = $request->getParsedBody();
 	$rating = $params['rating'];
     $caption = $params['caption'];
-    $user_id = 1;
-    $movie_id = 1;
+    $user_id = 2;
+    $movie_id = 2;
 
     $insertStatement = $pdo->insert(array(  'review_rating', 'review_caption', 'users_id', 'movie_id' ))
 								->into('review')
