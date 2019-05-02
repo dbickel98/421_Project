@@ -14,7 +14,7 @@ $app = new \Slim\App($c);
 
 $container = $app->getContainer();
 $container['pdo'] = function ($c) {
-    $dsn = 'mysql:host=mati.engr.utk.edu:33060;dbname=IE 421 Bickel Database; port=33060;charset=utf8'; // replace Localhost with your mysql host ip and replace dbName with your database name
+    $dsn = 'mysql:host=mati.engr.utk.edu:33060;dbname=xwq914; port=33060;charset=utf8'; // replace Localhost with your mysql host ip and replace dbName with your database name
     $usr = 'xwq914'; //replace dbUSERNAME with your database username
     $pwd = 'xwq914@421'; //replace dbUSERNAME with your database password
     $pdo = new \Slim\PDO\Database($dsn, $usr, $pwd);
