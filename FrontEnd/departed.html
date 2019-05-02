@@ -221,16 +221,21 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         
         <br>
 
-        <form action="/action_page.php" id="usrform">
-          Email: <input type="text" name="usrname">
-          <input type="submit">
-          <form>
-          <br>
-          <br>
-        <textarea rows="5" cols="50" name="comment" form="usrform"></textarea>
-          <br>
-        <p>Rating: <textarea rows="1" cols="2" name="comment" form="usrform"></textarea> /5</p>
-          <br>
+        <div id="app"> <!-- I added -->
+          <form  id="usrform">
+            Email: <input type="text" name="usrname">
+  
+            <form>
+            <br>
+            <br>
+          <textarea v-model="caption"  rows="5" cols="50" name="comment" form="usrform"></textarea>
+            <br>
+          <p>Rating: <textarea v-model="ratings"  rows="1" cols="2" name="comment" form="usrform"></textarea> /5</p>
+            <br>
+            <button @click.prevent="submitReview()">Submit</button>
+            <p>{{status}}</p>
+            </form>
+            
       </div>
 
     <!-- End Right Column -->
@@ -246,6 +251,11 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <p>Return to the main page</p>
   <p><a href="index.html" target="_blank">Return</a></p>
 </footer>
+
+	<!-- development version, includes helpful console warnings -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="assets/js/my.js"></script>
 
 </body>
 </html>
